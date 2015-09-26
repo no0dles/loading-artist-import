@@ -50,7 +50,7 @@ def import_comic(cursor, comic):
     if does_comic_exist(cursor, comic):
         return
 
-    comic_detail = loadingartist.get_comic_detail(comic['url'])
+    comic_detail = loadingartist.get_comic_detail(comic)
     import_comic_detail(cursor, comic_detail, False)
 
 

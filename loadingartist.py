@@ -37,8 +37,8 @@ def get_comic_detail(comic):
     soup = BeautifulSoup(html, PARSER)
 
     page_layout = soup.find('div', {'class': 'page-comic-layout'})
-    comic = page_layout.find('div', {'class': 'comic'})
-    img = comic.find('img')
+    comic_div = page_layout.find('div', {'class': 'comic'})
+    img = comic_div.find('img')
 
     page_post = soup.find('div', {'class': 'page-comic-post'})
     header = page_post.find('header')
