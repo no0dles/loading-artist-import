@@ -1,0 +1,4 @@
+beautifulsoup4==4.4.0
+feedparser==5.2.1
+PyMySQL==0.6.6
+python-dateutil==2.4.2
