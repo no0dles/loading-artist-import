@@ -71,8 +71,9 @@ def get_rss_items():
             'date': parse(entry['published'].strip())
         }
 
-        match = re.search(r'http://www.loadingartist.com/comic/([a-z-]*)/', comic_detail['url'])
-
+        match = re.search(r'http://www.loadingartist.com/comic/([a-z\-]*)/', comic_detail['url'])
+	if not match:
+		continue
         comic_detail['img_url'] = IMG_URL_FORMAT % {
             'year': comic_detail['date'].year,
             'month': str(comic_detail['date'].month).rjust(2, '0'),
